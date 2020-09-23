@@ -1,0 +1,7 @@
+.git/
+backups/
+.gitignore
+bootstrap.sh
+README.md
+*.swp
+bootstrap.exclude
