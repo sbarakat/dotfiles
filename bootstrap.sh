@@ -16,7 +16,7 @@ if ! grep -q "show_virtual_env" ~/.bashrc; then
 
 show_virtual_env() {
   if [[ -n "\$VIRTUAL_ENV" && -n "\$DIRENV_DIR" ]]; then
-    echo "(venv)"
+    echo "(env) "
   fi
 }
 export -f show_virtual_env
