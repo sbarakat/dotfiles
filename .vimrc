@@ -14,7 +14,6 @@ set title
 
 "set binary
 
-
 " -- Vundle initialization -----------------------------------------------------
 
 filetype off                  " required
@@ -22,8 +21,8 @@ filetype off                  " required
 if !isdirectory(expand("~/.vim/bundle/Vundle.vim"))
     echo "Installing Vundle.."
     echo ""
-	silent !mkdir -p ~/.vim/bundle
-	silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
     let s:bootstrap=1
 endif
 
@@ -57,8 +56,20 @@ filetype plugin indent on    " required
 
 set background=dark
 
+" koehler/slate/torte work well in non-diff
+colorscheme koehler
+
+" slate/murphy work well in diff
+if &diff
+    colorscheme slate
+endif
+
+if &term == "xterm"
+    set t_Co=256
+endif
+
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+set listchars=eol:$,tab:>-,trail:∙,extends:>,precedes:<
 
 set showmatch           "Show matching brackets
 set nowrap              "Don't wrap lines
