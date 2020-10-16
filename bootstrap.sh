@@ -25,6 +25,6 @@ eval "\$(direnv hook bash)"
 EOF
     echo ""
     echo "[direnv] Updated ~/.bashrc"
-    echo "[direnv] To complete the setup, install direnv and "
+    echo "[direnv] To complete the setup, install direnv and venv"
     echo "[direnv]   sudo apt install direnv python3-venv"
 fi
