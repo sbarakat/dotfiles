@@ -1,0 +1,22 @@
+[alias]
+    # List available aliases
+    aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
+    ci = commit
+    st = status
+    br = branch -vv
+    co = checkout
+    lg = log --graph --date=relative --pretty=tformat:'%C(auto)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+    # Undo last commit, changes staged
+    undo = reset --soft HEAD~1
+[core]
+    # Global ignore file (not shared)
+    excludesfile = ~/.gitignore_global
+[log]
+    # Automatically --follow when given a single path
+    follow = true
+[push]
+    # Push the current branch to update a branch with the same name on the receiving end
+    default = current
+[tag]
+    # Sort tags as version numbers whenever applicable, so 1.10.2 is AFTER 1.2.0.
+    sort = version:refname
