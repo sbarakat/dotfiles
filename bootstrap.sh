@@ -10,6 +10,16 @@ rsync --exclude-from=bootstrap.exclude \
     --backup --backup-dir="$BACKUP_DIR" \
     . ~
 
+
+# nvim aliases
+if ! grep -q "nvim" ~/.bashrc; then
+    cat << EOF >> ~/.bashrc
+
+alias vim='nvim'
+alias vimdiff='nvim -d'
+EOF
+fi
+
 # direnv - https://github.com/direnv/direnv/wiki/Python
 if ! grep -q "show_virtual_env" ~/.bashrc; then
     cat << EOF >> ~/.bashrc
@@ -28,3 +38,4 @@ EOF
     echo "[direnv] To complete the setup, install direnv and venv"
     echo "[direnv]   sudo apt install direnv python3-venv"
 fi
+
